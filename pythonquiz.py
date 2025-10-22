@@ -54,6 +54,6 @@ score=int (score/ len(questions)*100 )
 print(f"your score is {score}%")
 
 
-
+#this is commited with linux 
 
 
