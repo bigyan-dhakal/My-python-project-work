@@ -1,11 +1,11 @@
 #Atm mechince
 
-def show_balance():
+def show_balance(balance):
     print("*****************************")
     print(f"your balance is {balance:.2f}")
     print("*****************************")
 
-def deposit():
+def deposit(balance):
     amount=float(input("Enter amount to deposit:"))
     if amount< 0:
         print("That is not valid amount")
@@ -22,11 +22,16 @@ def withdraw():
    else:
     return amount
 
-balance = 0
-is_working = True
+# balance = 0
+# is_working = True
+
+def main():
+
+ balance = 0
+ is_working = True
 
 
-while is_working:
+ while is_working:
     print("*****************************")
     print("Banking program for chads")
     print("*****************************")
@@ -42,11 +47,11 @@ while is_working:
 
     match choice:
         case "1":
-            show_balance()
+            show_balance(balance)
         case "2":
            balance +=deposit()
         case "3":
-            balance -=withdraw()
+            balance -=withdraw(balance)
         case "4":
             is_working=False
         case _:
@@ -54,6 +59,9 @@ while is_working:
          print("That is not the valid choice")
          print("*****************************")   
 
-print("*****************************")
-print("Thank you! Have a nice day!! ")
-print("*****************************")
+ print("*****************************")
+ print("Thank you! Have a nice day!! ")
+ print("*****************************")
+
+if __name__=="__main__":
+   main()
